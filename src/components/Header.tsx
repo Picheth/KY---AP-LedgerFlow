@@ -50,9 +50,9 @@ export const Header: React.FC<HeaderProps> = ({
 
   const rolesList: { role: UserRole; name: string; title: string; limit: string }[] = [
     { role: 'cfo', name: 'Elena Vance', title: 'Finance Director / CFO', limit: '$1,000,000 threshold' },
-    { role: 'ap_specialist', name: 'Marcus Chen', title: 'AP Specialist', limit: '$15,000 threshold' },
-    { role: 'dept_manager', name: 'Sarah Lin', title: 'VP Engineering (Approver)', limit: '$50,000 threshold' },
-    { role: 'auditor', name: 'David Ross', title: 'External Auditor (KPMG)', limit: 'Read-only audit' },
+    { role: 'ap_specialist', name: 'Marcus Chen', title: 'Senior AP Specialist (Hardware & Supply Chain)', limit: '$15,000 threshold' },
+    { role: 'dept_manager', name: 'Sarah Lin', title: 'VP Hardware & Procurement', limit: '$50,000 threshold' },
+    { role: 'auditor', name: 'David Ross', title: 'External Auditor (KPMG SOX 404)', limit: 'Read-only audit' },
   ];
 
   return (
@@ -70,7 +70,12 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center font-mono font-bold text-sm shadow-xs">
                 LF
               </div>
-              <span className="font-semibold text-slate-900">LedgerFlow</span>
+              <div className="flex items-baseline gap-2">
+                <span className="font-semibold text-slate-900">LedgerFlow</span>
+                <span className="hidden xl:inline text-[11px] font-mono text-slate-500 font-normal">
+                  Smartphones & Accessories
+                </span>
+              </div>
             </button>
           </div>
 

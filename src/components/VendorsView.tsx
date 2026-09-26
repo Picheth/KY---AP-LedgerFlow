@@ -35,7 +35,7 @@ export const VendorsView: React.FC<VendorsViewProps> = ({
 
   // New Vendor Form State
   const [newVendorName, setNewVendorName] = useState('');
-  const [newCategory, setNewCategory] = useState('Cloud Infrastructure');
+  const [newCategory, setNewCategory] = useState('Semiconductor & Mobile SoCs');
   const [newTaxId, setNewTaxId] = useState('');
   const [newEmail, setNewEmail] = useState('');
   const [newPhone, setNewPhone] = useState('');
@@ -344,12 +344,14 @@ export const VendorsView: React.FC<VendorsViewProps> = ({
                     onChange={(e) => setNewCategory(e.target.value)}
                     className="w-full px-3 py-1.5 border border-slate-200 rounded-md"
                   >
-                    <option value="Cloud Infrastructure">Cloud Infrastructure</option>
-                    <option value="Enterprise Software">Enterprise Software</option>
-                    <option value="Supply Chain & Freight">Supply Chain & Freight</option>
-                    <option value="Professional Services">Professional Services</option>
-                    <option value="Hardware & Automation">Hardware & Automation</option>
-                    <option value="Office & Facilities">Office & Facilities</option>
+                    <option value="Semiconductor & Mobile SoCs">Semiconductor & Mobile SoCs</option>
+                    <option value="OLED Panels & Touch Screens">OLED Panels & Touch Screens</option>
+                    <option value="Camera Sensors & Optics">Camera Sensors & Optics</option>
+                    <option value="Contract Assembly & SMT">Contract Assembly & SMT</option>
+                    <option value="Lithium Batteries & Power Cells">Lithium Batteries & Power Cells</option>
+                    <option value="Accessories & Fast Chargers">Accessories & Fast Chargers</option>
+                    <option value="Glass Covers & Protection Materials">Glass Covers & Protection Materials</option>
+                    <option value="Supply Chain & Freight Logistics">Supply Chain & Freight Logistics</option>
                   </select>
                 </div>
 

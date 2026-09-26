@@ -28,23 +28,23 @@ export const InvoiceIntakeModal: React.FC<InvoiceIntakeModalProps> = ({
 
   const [isScanning, setIsScanning] = useState(false);
   const [vendorName, setVendorName] = useState('');
-  const [vendorCategory, setVendorCategory] = useState('Cloud Infrastructure');
+  const [vendorCategory, setVendorCategory] = useState('Semiconductor & Mobile SoCs');
   const [invoiceNumber, setInvoiceNumber] = useState('');
   const [poNumber, setPoNumber] = useState('');
   const [issueDate, setIssueDate] = useState('2026-09-25');
   const [dueDate, setDueDate] = useState('2026-10-25');
   const [currency, setCurrency] = useState<CurrencyCode>('USD');
-  const [department, setDepartment] = useState('Engineering');
+  const [department, setDepartment] = useState('Hardware Engineering');
   const [paymentTerms, setPaymentTerms] = useState('Net 30');
   const [threeWayMatched, setThreeWayMatched] = useState(true);
   const [lineItems, setLineItems] = useState<InvoiceLineItem[]>([
     {
       id: 'li_sample_1',
-      description: 'Cloud Server Infrastructure Nodes (Monthly Allocation)',
-      quantity: 1,
-      unitPrice: 14500.0,
-      taxRate: 0.08,
-      totalAmount: 14500.0,
+      description: 'Snapdragon 8 Gen 5 Mobile Application Processor (4nm TSMC)',
+      quantity: 1000,
+      unitPrice: 62.0,
+      taxRate: 0.0,
+      totalAmount: 62000.0,
     },
   ]);
 
@@ -53,44 +53,59 @@ export const InvoiceIntakeModal: React.FC<InvoiceIntakeModalProps> = ({
   // Preset sample receipts for instant automated intake demo
   const samplePresets = [
     {
-      label: 'AWS Cloud Invoice',
-      vendor: 'Amazon Web Services Inc.',
-      category: 'Cloud Infrastructure',
-      invNum: `INV-2026-${Math.floor(1000 + Math.random() * 9000)}`,
-      poNum: 'PO-2026-0988',
+      label: 'Qualcomm Snapdragon SoCs',
+      vendor: 'Qualcomm Technologies Inc.',
+      category: 'Semiconductor & Mobile SoCs',
+      invNum: `QCOM-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+      poNum: 'PO-2026-SP-1099',
       curr: 'USD' as CurrencyCode,
-      dept: 'Engineering',
+      dept: 'Hardware Engineering',
       terms: 'Net 30',
       items: [
-        { id: '1', description: 'EC2 On-Demand Compute Instances', quantity: 24, unitPrice: 380, taxRate: 0.07, totalAmount: 9120 },
-        { id: '2', description: 'S3 Standard Glacier Deep Archive storage', quantity: 1, unitPrice: 2400, taxRate: 0.07, totalAmount: 2400 },
+        { id: '1', description: 'Snapdragon 8 Gen 5 Octa-Core Application Processor', quantity: 1500, unitPrice: 62.0, taxRate: 0.0, totalAmount: 93000 },
+        { id: '2', description: 'Snapdragon X75 5G Modem-RF Baseband IC', quantity: 1500, unitPrice: 12.0, taxRate: 0.0, totalAmount: 18000 },
       ],
     },
     {
-      label: 'Maersk Freight Bill',
-      vendor: 'Maersk Logistics Global',
-      category: 'Supply Chain & Freight',
-      invNum: `MAE-2026-${Math.floor(1000 + Math.random() * 9000)}`,
-      poNum: 'PO-2026-1033',
-      curr: 'EUR' as CurrencyCode,
-      dept: 'Operations',
-      terms: 'Net 45',
+      label: 'Samsung 120Hz LTPO AMOLED',
+      vendor: 'Samsung Display Co., Ltd.',
+      category: 'OLED Panels & Touch Screens',
+      invNum: `SDC-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+      poNum: 'PO-2026-DISP-1120',
+      curr: 'USD' as CurrencyCode,
+      dept: 'Manufacturing & SMT',
+      terms: 'Net 30',
       items: [
-        { id: '1', description: 'International Ocean Container Transit (40ft)', quantity: 2, unitPrice: 4200, taxRate: 0.19, totalAmount: 8400 },
-        { id: '2', description: 'Bunker fuel adjustment factor surcharge', quantity: 1, unitPrice: 1850, taxRate: 0.19, totalAmount: 1850 },
+        { id: '1', description: '6.7-inch Dynamic LTPO 120Hz Flexible AMOLED Screen Module', quantity: 2500, unitPrice: 39.0, taxRate: 0.0, totalAmount: 97500 },
       ],
     },
     {
-      label: 'Tokyo Robotics Delivery',
-      vendor: 'Tokyo Precision Robotics Ltd.',
-      category: 'Hardware & Automation',
-      invNum: `TPR-2026-${Math.floor(1000 + Math.random() * 9000)}`,
-      poNum: 'PO-2026-1055',
-      curr: 'JPY' as CurrencyCode,
-      dept: 'Engineering',
+      label: '65W GaN Fast Chargers (Acc.)',
+      vendor: 'Luxshare Precision Accessories Ltd.',
+      category: 'Accessories & Fast Chargers',
+      invNum: `LUX-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+      poNum: 'PO-2026-ACC-1144',
+      curr: 'USD' as CurrencyCode,
+      dept: 'Accessories & Retail',
+      terms: 'Net 15',
+      items: [
+        { id: '1', description: '65W Dual-Port GaN Fast Wall Chargers (Compact Foldable)', quantity: 4000, unitPrice: 8.5, taxRate: 0.0, totalAmount: 34000 },
+        { id: '2', description: '100W Braided Kevlar USB-C PD Cables (2m High-Speed)', quantity: 6000, unitPrice: 2.5, taxRate: 0.0, totalAmount: 15000 },
+        { id: '3', description: 'Qi2 Magnetic 15W Wireless Charging Pads', quantity: 1500, unitPrice: 8.0, taxRate: 0.0, totalAmount: 12000 },
+      ],
+    },
+    {
+      label: 'Corning Gorilla Glass Covers',
+      vendor: 'Corning Incorporated (Gorilla Glass)',
+      category: 'Glass Covers & Protection Materials',
+      invNum: `CRN-2026-${Math.floor(1000 + Math.random() * 9000)}`,
+      poNum: 'PO-2026-GLS-1180',
+      curr: 'USD' as CurrencyCode,
+      dept: 'Hardware Engineering',
       terms: 'Net 30',
       items: [
-        { id: '1', description: 'High Precision Servo Stepper Motors', quantity: 10, unitPrice: 120000, taxRate: 0.1, totalAmount: 1200000 },
+        { id: '1', description: 'Gorilla Glass Armor Front Cover Sheets', quantity: 5000, unitPrice: 4.5, taxRate: 0.0, totalAmount: 22500 },
+        { id: '2', description: 'Tempered Glass Screen Protector Retail Packs', quantity: 5000, unitPrice: 1.5, taxRate: 0.0, totalAmount: 7500 },
       ],
     },
   ];
@@ -315,13 +330,14 @@ export const InvoiceIntakeModal: React.FC<InvoiceIntakeModalProps> = ({
                   onChange={(e) => setVendorCategory(e.target.value)}
                   className="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-md text-slate-800 focus:outline-none focus:border-slate-500"
                 >
-                  <option value="Cloud Infrastructure">Cloud Infrastructure</option>
-                  <option value="Enterprise Software">Enterprise Software</option>
-                  <option value="Supply Chain & Freight">Supply Chain & Freight</option>
-                  <option value="Professional Services">Professional Services</option>
-                  <option value="Hardware & Automation">Hardware & Automation</option>
-                  <option value="Telecommunications">Telecommunications</option>
-                  <option value="Office & Facilities">Office & Facilities</option>
+                  <option value="Semiconductor & Mobile SoCs">Semiconductor & Mobile SoCs</option>
+                  <option value="OLED Panels & Touch Screens">OLED Panels & Touch Screens</option>
+                  <option value="Camera Sensors & Optics">Camera Sensors & Optics</option>
+                  <option value="Contract Assembly & SMT">Contract Assembly & SMT</option>
+                  <option value="Lithium Batteries & Power Cells">Lithium Batteries & Power Cells</option>
+                  <option value="Accessories & Fast Chargers">Accessories & Fast Chargers</option>
+                  <option value="Glass Covers & Protection Materials">Glass Covers & Protection Materials</option>
+                  <option value="Supply Chain & Freight Logistics">Supply Chain & Freight Logistics</option>
                 </select>
               </div>
 
@@ -391,12 +407,13 @@ export const InvoiceIntakeModal: React.FC<InvoiceIntakeModalProps> = ({
                   onChange={(e) => setDepartment(e.target.value)}
                   className="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-md text-slate-800 focus:outline-none focus:border-slate-500"
                 >
-                  <option value="Engineering">Engineering</option>
-                  <option value="Finance">Finance</option>
-                  <option value="Operations">Operations</option>
-                  <option value="IT Infrastructure">IT Infrastructure</option>
-                  <option value="Facilities">Facilities</option>
-                  <option value="Legal & Compliance">Legal & Compliance</option>
+                  <option value="Hardware Engineering">Hardware Engineering</option>
+                  <option value="Manufacturing & SMT">Manufacturing & SMT</option>
+                  <option value="Accessories & Retail">Accessories & Retail</option>
+                  <option value="Operations & Manufacturing">Operations & Manufacturing</option>
+                  <option value="Supply Chain & Logistics">Supply Chain & Logistics</option>
+                  <option value="Sales & Channel Distribution">Sales & Channel Distribution</option>
+                  <option value="Finance & Treasury">Finance & Treasury</option>
                 </select>
               </div>
 

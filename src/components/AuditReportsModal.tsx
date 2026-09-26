@@ -117,7 +117,7 @@ export const AuditReportsModal: React.FC<AuditReportsModalProps> = ({
                 LEDGERFLOW FINANCIAL RECONCILIATION
               </div>
               <div className="text-xs text-slate-500 mt-1">
-                Audit Scope: <strong className="text-slate-900">{selectedMonth} {selectedYear} (Q3 Reporting)</strong> · Entity: Global Holdings Corp
+                Audit Scope: <strong className="text-slate-900">{selectedMonth} {selectedYear} (Q3 Reporting)</strong> · Entity: NovaCell Mobile Technologies Corp (Smartphones & Accessories Hardware)
               </div>
             </div>
             <div className="text-right text-xs font-mono text-slate-500">
